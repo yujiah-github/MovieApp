@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
-function Movie({rnum, movieNm, openDt, rank, rankInten}){
+function Movie({rnum, openDt, rank, rankInten, id, movieNm}){
     return(
         <div key={rnum}>
-            <h2>{movieNm}</h2>
+            <Link to={`/movie/${id}`}>{movieNm}</Link>
             <p>{openDt}</p>
             <p>{rank}</p>
             <p>{rankInten}</p>
@@ -16,7 +17,8 @@ Movie.ProtoType ={
     movieNm: PropTypes.string.isRequired,
     openDt: PropTypes.string.isRequired,
     rank: PropTypes.number.isRequired,
-    rankInten: PropTypes.number.isRequired
+    rankInten: PropTypes.number.isRequired,
+    id: PropTypes.number.isRequired
 }
 
 
