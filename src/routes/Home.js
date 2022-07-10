@@ -26,6 +26,7 @@ return (
             {movies.map((movie) => (
                 <Movie
                 key = {movie.rnum}
+                id={movie.movieCd}
                 movieNm={movie.movieNm}
                 openDt={movie.openDt}
                 rank = {movie.rank}
