@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Movie from "../components/DailyBoxOffice";
+import Navbar from "../components/Navbar";
 
 function Home() {
     /*
@@ -33,18 +33,7 @@ useEffect(() => {
 
 return (
     <div>
-        {loading ? (
-        <h1>Loading...</h1> 
-        ) : (
-        <nav>
-            <ul>
-                <li>일별 박스오피스</li>
-                <li>주간/주말 박스오피스</li>
-                <li>영화목록</li>
-                <li>영화사목록</li>
-            </ul>
-        </nav>
-        )}
+            <Navbar />
     </div>
 )
 }
