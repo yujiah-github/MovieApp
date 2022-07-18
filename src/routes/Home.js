@@ -1,7 +1,21 @@
 import React, { useEffect, useState } from "react";
-import Movie from "../components/Movie";
+import Navbar from "../components/Navbar";
 
 function Home() {
+    /*
+    <div>
+            {movies.map((movie) => (
+                <Movie
+                key = {movie.rnum}
+                movieId={movie.movieCd}
+                movieNm={movie.movieNm}
+                openDt={movie.openDt}
+                rank = {movie.rank}
+                rankInten={movie.rankInten}
+                />
+            ))} 
+        </div>
+    */
     const [loading, setLoading] = useState(true);
     const [movies, setMovies] = useState([]);
     const getMovies = async () => {
@@ -19,22 +33,7 @@ useEffect(() => {
 
 return (
     <div>
-        {loading ? (
-        <h1>Loading...</h1> 
-        ) : (
-        <div>
-            {movies.map((movie) => (
-                <Movie
-                key = {movie.rnum}
-                movieId={movie.movieCd}
-                movieNm={movie.movieNm}
-                openDt={movie.openDt}
-                rank = {movie.rank}
-                rankInten={movie.rankInten}
-                />
-            ))} 
-        </div>
-        )}
+            <Navbar />
     </div>
 )
 }

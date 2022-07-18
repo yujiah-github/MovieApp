@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 
-function Movie({rnum, openDt, rank, rankInten, movieId, movieNm}){
+function DailyBoxOfficeList({rnum, openDt, rank, rankInten, movieId, movieNm}){
     return(
         <div key={rnum}>
             <Link to={`/movie/${movieId}`}>{movieNm}</Link>
@@ -12,7 +12,7 @@ function Movie({rnum, openDt, rank, rankInten, movieId, movieNm}){
     );
 }
 
-Movie.ProtoType ={
+DailyBoxOfficeList.ProtoType ={
     rnum: PropTypes.number.isRequired,
     movieNm: PropTypes.string.isRequired,
     openDt: PropTypes.string.isRequired,
@@ -22,4 +22,4 @@ Movie.ProtoType ={
 }
 
 
-export default Movie;
+export default DailyBoxOfficeList;
