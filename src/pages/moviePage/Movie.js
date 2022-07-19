@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
 import MovieList from "./MovieList";
+import {H1} from '../../components/StyledComponents';
+import Navbar from "../../components/Navbar";
+import {MovieSearch} from '../../components/MovieSearch';
+import {Section} from '../../components/Section';
 
 function Movie(){
     const [loading, setLoading] = useState(true);
@@ -27,32 +31,8 @@ function Movie(){
     const onChangeSearchKeyword = (event) => {
         setSearchKeyword(event.target.value);
     }
-    
-    return(
-        <div>
-            {loading ? (
-                <h1>Loading...</h1>
-            ) :
-            (
-                <div>
-                    <h1>영화 검색</h1>
-                    <form>
-                    <select name="movieChoice">
-                    <option value="first">영화 제목</option>
-                    <option value="second">제작 국가</option>
-                    <option value="third">영화 장르</option>
-                    </select>
-                    &nbsp;
-                    <input
-                    type="text"
-                    placeholder="검색어를 입력하세요"
-                    onChange={onChangeSearchKeyword}
-                    >
-                    </input>
-                    &nbsp;
-                    <button>검색하기</button>
-                    </form>
-                    {movies.map((movie) =>
+
+    {movies.map((movie) =>
                         <MovieList
                         key={movie.movieCd}
                         movieNm={movie.movieNm}
@@ -60,9 +40,28 @@ function Movie(){
                         genreAlt={movie.genreAlt}
                         />
                     )}
-                </div>
-            )
-        }
+    
+    return(
+        <div>
+            <Navbar />
+                    <Section>
+                        <H1>영화 검색</H1>
+                        <MovieSearch>
+                            <select name="movieChoice">
+                                <option value="first">영화 제목</option>
+                                <option value="second">제작 국가</option>
+                                <option value="third">영화 장르</option>
+                            </select>
+                            <input
+                                type="text"
+                                placeholder="검색어를 입력하세요"
+                                onChange={onChangeSearchKeyword}
+                                value={searchKeyword}
+                                >
+                            </input>
+                            <button>검색하기</button>
+                        </MovieSearch>
+                    </Section>
         </div>
     );
 }

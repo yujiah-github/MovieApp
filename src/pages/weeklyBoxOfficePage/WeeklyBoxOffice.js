@@ -2,6 +2,9 @@ import React from "react";
 import {useEffect, useState} from 'react';
 import WeeklyBoxOfficeList from "./WeeklyBoxOfficeList";
 import styled from 'styled-components';
+import {H1} from '../../components/StyledComponents';
+import Navbar from "../../components/Navbar";
+import { Section } from "../../components/Section";
 
 
 const DateSelect = styled.input`
@@ -50,15 +53,22 @@ function WeeklyBoxOffice(){
         */
     }
 
+    {WeeklyBoxOffice.map((moive) =>
+            <WeeklyBoxOfficeList 
+                key={moive.rnum}
+                rank={moive.rank}
+                rankInten={moive.rankInten}
+                movieCd={moive.movieCd}
+                movieNm={moive.movieNm}
+            /> 
+    )}
+
     return(
         <div>
-            {loading ? (
-                <h1>Loading...</h1>
-            )
-                : (
-                    <div>
-                        <h1>주간 박스오피스 순위</h1>
-                        <h2>날짜 선택</h2>
+            <Navbar />
+                <Section>
+                <H1>주간 박스오피스 순위</H1>
+                    <h2>날짜 선택</h2>
                         <DateSelect
                             type="date"
                             id="start"
@@ -68,20 +78,9 @@ function WeeklyBoxOffice(){
                             required
                         />
                         <button onClick={onDateSubmit}>날짜 검색하기</button>
-
-                    {WeeklyBoxOffice.map((moive) =>
-                    <WeeklyBoxOfficeList 
-                    key={moive.rnum}
-                    rank={moive.rank}
-                    rankInten={moive.rankInten}
-                    movieCd={moive.movieCd}
-                    movieNm={moive.movieNm}
-                    /> 
-                )}
-                    </div>
-                )
-            }
+                </Section>
         </div>
+
     );
 }
 

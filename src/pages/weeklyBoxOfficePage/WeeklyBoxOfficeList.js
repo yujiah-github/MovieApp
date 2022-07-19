@@ -19,7 +19,7 @@ function WeeklyBoxOfficeList({rank, rankInten, movieNm}){
     );
 }
 
-WeeklyBoxOfficeList.ProtoType ={
+WeeklyBoxOfficeList.ProtoTypes ={
     key: PropTypes.number.isRequired,
     movieNm: PropTypes.string.isRequired,
     rank: PropTypes.number.isRequired,
