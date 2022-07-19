@@ -1,14 +1,24 @@
 import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+    background-color: gray;
+    margin: 10px;
+`;
+
+const RankIntenColor = styled.span`
+    rankInten > 0 ? color: red : color: blue;
+`;
 
 function DailyBoxOfficeList({rnum, openDt, rank, rankInten, movieId, movieNm}){
     return(
-        <div key={rnum}>
-            <Link to={`/movie/${movieId}`}>{movieNm}</Link>
-            <p>{openDt}</p>
-            <p>{rank}</p>
-            <p>{rankInten}</p>
-        </div>
+        <Wrapper key={rnum}>
+            <Link to={`/movie/${movieId}`}><h2>{movieNm}</h2></Link>
+            <p>개봉일: {openDt}</p>
+            <p>순위: {rank}</p>
+            <p>순위 변동: <RankIntenColor>{rankInten}</RankIntenColor></p>
+        </Wrapper>
     );
 }
 
