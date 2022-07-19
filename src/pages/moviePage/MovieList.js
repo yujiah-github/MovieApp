@@ -1,15 +1,17 @@
 import React from "react";
+import styled from 'styled-components';
 
-function MovieList({key, movieNm, movieNmEn, nationAlt, genreAlt, repNationNm, repGenreNm}){
+const Wrapper = styled.div`
+    background-color: gray;
+`;
+
+function MovieList({movieNm, nationAlt, genreAlt}){
     return(
-        <div key={key}>
+        <Wrapper>
             <p>{movieNm}</p>
-            <p>{movieNmEn}</p>
             <p>{nationAlt}</p>
-            <p>{repNationNm}</p>
             <p>{genreAlt}</p>
-            <p>{repGenreNm}</p>
-        </div>
+        </Wrapper>
     );
 }
 
