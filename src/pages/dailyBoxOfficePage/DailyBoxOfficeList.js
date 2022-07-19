@@ -22,7 +22,7 @@ function DailyBoxOfficeList({rnum, openDt, rank, rankInten, movieId, movieNm}){
     );
 }
 
-DailyBoxOfficeList.ProtoType ={
+DailyBoxOfficeList.ProtoTypes ={
     rnum: PropTypes.number.isRequired,
     movieNm: PropTypes.string.isRequired,
     openDt: PropTypes.string.isRequired,
