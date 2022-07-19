@@ -1,14 +1,17 @@
 import React from "react";
+import styled from 'styled-components';
 
-function MovieCompanyList({key, companyNm, companyNmEn, companyPartNames, ceoNm, filmoNames}){
+const Wrapper = styled.div`
+    background-color: gray;
+`;
+
+function MovieCompanyList({ companyNm, ceoNm, filmoNames}){
     return(
-        <div key={key}>
+        <Wrapper>
             <p>{companyNm}</p>
-            <p>{companyNmEn}</p>
-            <p>{companyPartNames}</p>
             <p>{ceoNm}</p>
             <p>{filmoNames}</p>
-        </div>
+        </Wrapper>
     );
 }
 
