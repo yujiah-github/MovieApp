@@ -2,10 +2,11 @@ import React from "react";
 import DailyBoxOfficeList from "./DailyBoxOfficeList";
 import {useEffect, useState} from 'react';
 import styled from 'styled-components';
+import { H1 } from "../../components/StyledComponents";
+import Navbar from "../../components/Navbar";
+import { DateSelect } from "../../components/DateSelect";
+import {Section} from "../../components/Section";
 
-const DateSelect = styled.input`
-
-`;
 
 function DailyBoxOffice(){
     //오늘 날짜를 가져오는 함수
@@ -60,13 +61,22 @@ function DailyBoxOffice(){
         */
     }
 
+    {dailyBoxOffice.map((x) => (
+                <DailyBoxOfficeList
+                key = {x.rnum}
+                movieId={x.movieCd}
+                movieNm={x.movieNm}
+                openDt={x.openDt}
+                rank = {x.rank}
+                rankInten={x.rankInten}
+                />
+            ))} 
+
     return(
-        <div>
-        {loading ? (
-        <h1>Loading...</h1> 
-        ) : (
             <div>
-                <h1>주간 박스오피스 순위</h1>
+                <Navbar />
+                <Section>
+                    <H1>일일 박스오피스 순위</H1>
                 <h2>날짜 선택</h2>
                 <DateSelect
                     type="date"
@@ -77,19 +87,8 @@ function DailyBoxOffice(){
                     required
                 />
                 <button onClick={onDateSubmit}>날짜 검색하기</button>
-            {dailyBoxOffice.map((x) => (
-                <DailyBoxOfficeList
-                key = {x.rnum}
-                movieId={x.movieCd}
-                movieNm={x.movieNm}
-                openDt={x.openDt}
-                rank = {x.rank}
-                rankInten={x.rankInten}
-                />
-            ))} 
+                </Section>
         </div>
-        )}
-    </div>
     );
 }
 
