@@ -15,7 +15,7 @@ function Detail(){
         getMovie();
     }, [])
     return(
-        <h1>Detail</h1>
+        <h1>{movieId}</h1>
     );
 }
 
