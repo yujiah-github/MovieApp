@@ -33,7 +33,8 @@ useEffect(() => {
 
 return (
     <div>
-            <Navbar />
+        <Navbar />
+        즐거운 영화생활!
     </div>
 )
 }
