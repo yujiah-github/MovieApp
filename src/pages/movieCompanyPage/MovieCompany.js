@@ -3,8 +3,9 @@ import {useEffect, useState} from 'react';
 import MovieCompanyList from './MovieCompanyList';
 import {Section} from '../../components/Section';
 import Navbar from "../../components/Navbar";
-import {MovieSearch, Select} from '../../components/MovieSearch';
+import {MovieSearch} from '../../components/MovieSearch';
 import {H1} from '../../components/StyledComponents';
+import { FaSearch} from 'react-icons/fa';
 
 function MovieCompany(){
     const [loading, setLoading] = useState(true);
@@ -58,7 +59,7 @@ function MovieCompany(){
                             onChange={onChangeSearchKeyword}
                         >
                         </input>
-                        <button>검색하기</button>
+                        <FaSearch />
                     </MovieSearch>
                 </Section>
             </div>
