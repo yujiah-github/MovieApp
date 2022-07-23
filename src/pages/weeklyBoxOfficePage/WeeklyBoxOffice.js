@@ -1,15 +1,11 @@
-import React from "react";
-import {useEffect, useState} from 'react';
+import React , {useEffect, useState}from "react";
 import WeeklyBoxOfficeList from "./WeeklyBoxOfficeList";
-import styled from 'styled-components';
 import {H1} from '../../components/StyledComponents';
 import Navbar from "../../components/Navbar";
+import { DateSelect } from "../../components/DateSelect";
 import { Section } from "../../components/Section";
+import { FaSearch} from 'react-icons/fa';
 
-
-const DateSelect = styled.input`
-
-`;
 
 function WeeklyBoxOffice(){
     const [loading, setLoading] = useState(true);
@@ -67,17 +63,20 @@ function WeeklyBoxOffice(){
         <div>
             <Navbar />
                 <Section>
-                <H1>주간 박스오피스 순위</H1>
-                    <h2>날짜 선택</h2>
-                        <DateSelect
-                            type="date"
-                            id="start"
-                            name="trip-start"
-                            value={dateValue}
-                            onChange={onChangeDateValue}
-                            required
-                        />
-                        <button onClick={onDateSubmit}>날짜 검색하기</button>
+                    <H1>주간 박스오피스 순위</H1>
+                            <DateSelect>
+                                <h3>날짜 선택</h3>
+                                <input
+                                type="date"
+                                class="dateSelect"
+                                name="trip-start"
+                                value={dateValue}
+                                onChange={onChangeDateValue}
+                                required
+                                >
+                                </input>
+                                <span class="search"><FaSearch onClick={onDateSubmit} /></span>
+                            </DateSelect>
                 </Section>
         </div>
 
