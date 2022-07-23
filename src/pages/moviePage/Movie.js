@@ -4,6 +4,7 @@ import {H1} from '../../components/StyledComponents';
 import Navbar from "../../components/Navbar";
 import {MovieSearch} from '../../components/MovieSearch';
 import {Section} from '../../components/Section';
+import { FaSearch } from "react-icons/fa";
 
 function Movie(){
     const [loading, setLoading] = useState(true);
@@ -59,7 +60,7 @@ function Movie(){
                                 value={searchKeyword}
                                 >
                             </input>
-                            <button>검색하기</button>
+                            <FaSearch />
                         </MovieSearch>
                     </Section>
         </div>
