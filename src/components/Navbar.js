@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom';
 import styled from "styled-components";
+import { MdMovie } from "react-icons/md";
 
 const Nav = styled.div`
     background-color: black;
@@ -37,7 +38,7 @@ function Navbar(){
     return(
         <Nav>
             <ul id="item">
-                <Link to={`/`}><span id="itemList">이미지</span></Link>
+                <Link to={`/`}><span id="itemList"><MdMovie /></span></Link>
                 <Link to={`/weeklyboxoffice`}><li id="itemList">주간/주말 박스오피스</li></Link>
                 <Link to={`/dailyboxoffice`}><li id="itemList">일별 박스오피스</li></Link>
                 <Link to={`/movie`}><li id="itemList">영화목록</li></Link>
